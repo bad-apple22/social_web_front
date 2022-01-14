@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+#login-div-main{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-image: url("./img/login_background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#login_card{
+    top: 30%;
+    left: 40%;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /*padding: 20px;*/
+    border-radius: 25px;
+}
+#login-form{
+    padding: 10px;
+}
+#login-submit{
+    width: 100%;
+}
+#login-form-forgot{
+    float: right;
+}
