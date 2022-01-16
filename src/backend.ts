@@ -2,7 +2,6 @@
 负责与后端进行通讯，数据交换
  */
 import cookies from "./cookies";
-import assert from "assert";
 
 const protocol = "http"
 const hostname = "localhost";

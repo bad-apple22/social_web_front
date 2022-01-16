@@ -5,12 +5,13 @@ import {LikeOutlined, UserOutlined} from '@ant-design/icons';
 
 import type {ProSettings} from '@ant-design/pro-layout';
 import ProLayout, {PageContainer, SettingDrawer, ProBreadcrumb} from '@ant-design/pro-layout';
-import 'antd/dist/antd.css'
-import '@ant-design/pro-layout/dist/layout.css'
+// import 'antd/dist/antd.css'
+// import '@ant-design/pro-layout/dist/layout.css'
 import reportWebVitals from "./reportWebVitals";
 import logo from './img/logo.png'
 import {MenuInfo} from "rc-menu/lib/interface";
 import QingXiaoJiaPage from "./qingxiaojia";
+import UserManagementPage from "./user_management";
 let mainMenuRoute = {
     path: '/',
     routes: [
@@ -117,6 +118,16 @@ let mainMenuRoute = {
         {
             path: '/系统管理',
             name: '系统管理',
+            routes: [
+                {
+                    path: '/用户管理',
+                    name: '用户管理',
+                },
+                {
+                    path: '/权限管理',
+                    name: '权限管理',
+                },
+            ],
         },
     ]
 };
@@ -138,6 +149,9 @@ class Home extends React.Component<any, any> {
         switch(info.key){
             case "/请销假":
                 this.setState({page:<QingXiaoJiaPage/>});
+                break;
+            case "/用户管理":
+                this.setState({page:<UserManagementPage/>});
                 break;
         }
 

@@ -3,11 +3,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css'
 import '@ant-design/pro-layout/dist/layout.css'
+import '@ant-design/pro-table/dist/table.css'
+import '@ant-design/pro-form/dist/form.css'
 import reportWebVitals from "./reportWebVitals";
 import Login from './login'
 import Home from './home'
 import Cookies from "./cookies";
-
 
 
 ReactDOM.render(
