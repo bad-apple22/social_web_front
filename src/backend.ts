@@ -12,7 +12,7 @@ function getSession() {
     return cookies.getCookie("session");
 }
 
-async function request(path: string, params: any) {
+async function request(path: string, params: any) : Promise<any> {
     console.log("request:", path, params);
     params.session = getSession();
     let res = await fetch(url + "/" + path, {
@@ -20,6 +20,7 @@ async function request(path: string, params: any) {
         headers: {
             'Content-Type': 'application/json',
         },
+        // mode:'cors',
         body: JSON.stringify(params)
     });
     return await res.json();
@@ -39,6 +40,7 @@ export async function login(param: { username: string, password: string, remembe
         body: JSON.stringify(param)
     });
     let res = await res_data.json();
+    console.log("res:",res);
     if (res.success) {
         if (param.remember)
             cookies.setCookie("session", res.session, 60 * 60 * 24 * 30);
@@ -66,4 +68,15 @@ export async function queryVacation(param: {
         console.log("queryVacation:", e)
         return null;
     }
+}
+
+export async function addUser(param: {
+    id: number,
+    name: string,
+    organization: string,
+    username: string,
+    phonenum: string,
+    enabled: boolean,
+}) {
+    request("queryVacation", param);
 }

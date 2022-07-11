@@ -202,6 +202,7 @@ class QingXiaoJiaPage extends React.Component<any, any> {
                 // }}
                 pagination={{
                     pageSize: 5,
+                    total:50,
                 }}
                 dateFormatter="string"
                 headerTitle="请销假"
