@@ -5,47 +5,50 @@ import cookies from "./cookies";
 
 const protocol = "http"
 const hostname = "localhost";
-const port = 8080;
-const url = protocol + "://" + hostname + ":" + port;
+const port = 3000;
+const url = protocol + "://" + hostname + ":" + port+"/api";
 
-function getSession() {
-    return cookies.getCookie("session");
-}
+// function getSession() {
+//     return cookies.getCookie("session");
+// }
 
-async function request(path: string, params: any) : Promise<any> {
+async function request(path: string, params: any): Promise<any> {
     console.log("request:", path, params);
-    params.session = getSession();
+    // params.session = getSession();
     let res = await fetch(url + "/" + path, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        // mode:'cors',
+        credentials: 'include',
+        // mode: 'cors',
         body: JSON.stringify(params)
     });
-    return await res.json();
+    let data = await res.text();
+    console.log("res data:" + data);
+    return JSON.parse(data);
 }
 
-export async function verifySession() {
-    let session = getSession();
-    if (session == null) return false;
-    let res = await request("verify_session", session);
-    return res.success;
-}
+// export async function verifySession() {
+//     let session = getSession();
+//     if (session == null) return false;
+//     let res = await request("verify_session", session);
+//     return res.success;
+// }
 
-export async function login(param: { username: string, password: string, remember: boolean }) {
+export async function login(param: { username: string, password: string }) {
+    let req_param = new URLSearchParams();
+    req_param.append("username", param.username);
+    req_param.append("password", param.password);
+    console.log("param:", req_param.toString());
     let res_data = await fetch(url + "/login", {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(param)
+        method: 'POST',credentials: 'include',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body: req_param.toString()
     });
     let res = await res_data.json();
-    console.log("res:",res);
+    console.log("res:", res);
     if (res.success) {
-        if (param.remember)
-            cookies.setCookie("session", res.session, 60 * 60 * 24 * 30);
-        else
-            cookies.setTempCookie("session", res.session);
         return true;
     }
     return false;

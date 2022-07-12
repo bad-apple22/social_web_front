@@ -73,9 +73,9 @@ class LoginPage extends React.Component<any, any> {
                             />
                         </Form.Item>
                         <Form.Item>
-                            <Form.Item name="remember" valuePropName="checked" noStyle>
-                                <Checkbox disabled={this.state.is_doing_login}>记住密码</Checkbox>
-                            </Form.Item>
+                            {/*<Form.Item name="remember" valuePropName="checked" noStyle>*/}
+                            {/*    <Checkbox disabled={this.state.is_doing_login}>记住密码</Checkbox>*/}
+                            {/*</Form.Item>*/}
 
                             <a id="login-form-forgot">
                                 忘记密码
