@@ -12,16 +12,17 @@ body {
     background-size: 100% 100%;
 }
 #login_card{
-    top: 30%;
-    left: 40%;
+    top: 19%;
+    left: 60%;
     width: fit-content;
+    height: fit-content;
     background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     /*padding: 20px;*/
     border-radius: 25px;
 }
 #login-form{
-    padding: 10px;
+    padding: 100px;
 }
 #login-submit{
     width: 100%;

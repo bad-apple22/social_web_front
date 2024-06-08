@@ -42,9 +42,10 @@ class LoginPage extends React.Component<any, any> {
 
     render() {
         return (
-            <div id={'login-div-main'}>
-                <Card id={'login_card'}>
-                    <img src={logo} width={'200px'} alt="logo"/>
+            <div id={'login-div-main'} >
+                <Card id={'login_card'} >
+                    <img src={logo} width={'400px'} alt="logo"/>
+                    <div style={{marginTop: '30px'}}/>{/* 这里是空行，通过marginTop来设置间隔 */}
                     <Form<LoginParams>
                         id={'login-form'}
                         name="login-form"
@@ -56,6 +57,7 @@ class LoginPage extends React.Component<any, any> {
                             rules={[{required: true, message: '请输入用户名!'}]}
                         >
                             <Input
+                                style={{ width: '200px' }} // 设置 Input 组件的宽度
                                 prefix={<UserOutlined/>}
                                 placeholder="用户名"
                                 disabled={this.state.is_doing_login}
@@ -66,6 +68,7 @@ class LoginPage extends React.Component<any, any> {
                             rules={[{required: true, message: '请输入密码!'}]}
                         >
                             <Input
+                                style={{ width: '200px' }} // 设置 Input 组件的宽度
                                 prefix={<LockOutlined/>}
                                 type="password"
                                 placeholder="密码"

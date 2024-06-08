@@ -1,13 +1,13 @@
 import React, {useRef} from 'react';
 import ReactDOM from 'react-dom';
-import background from './img/login_background.png'
-import logo from './img/logo.png'
+import background from '../src/img/login_background.png'
+import logo from '../src/img/logo.png'
 import {Card, Form, Input, Button, Checkbox, List, Avatar, Dropdown} from "antd";
 import type {ProColumns, ActionType} from '@ant-design/pro-table';
 import ProTable, {TableDropdown} from '@ant-design/pro-table';
 import {UserOutlined, LockOutlined, PlusOutlined} from '@ant-design/icons';
 import '@ant-design/pro-table/dist/table.css'
-import {queryVacation} from "./backend";
+import {queryVacation} from "../src/backend";
 
 type queryVacationItem = {
     id: number,

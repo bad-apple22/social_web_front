@@ -11,24 +11,6 @@ import Home from './home'
 import Cookies from "./cookies";
 
 
-// class Wrapper extends React.Component {
-//     constructor(props){
-//         super	(props)
-//     }
-//
-//     render() {
-//         return (
-//             <div>
-//                 <Link to='/a'>组件A</Link> <br/>
-//                 <Link to='/b'>组件B</Link>
-//                 {this.props.children}
-//             </div>
-//         )
-//
-//     }
-// }
-
-
 ReactDOM.render(
     // <React.StrictMode>
     <BrowserRouter>

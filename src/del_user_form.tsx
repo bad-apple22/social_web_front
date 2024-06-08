@@ -6,7 +6,7 @@ import ProForm, {
     ProFormDateRangePicker,
     ProFormSelect, ProFormGroup,
 } from '@ant-design/pro-form';
-import {PlusOutlined} from '@ant-design/icons';
+import {PlusOutlined,MinusOutlined} from '@ant-design/icons';
 
 export default () => {
     return (
@@ -20,11 +20,11 @@ export default () => {
             phonenum: string;
             organization: string;
         }>
-            title="添加用户"
+            title="删除用户"
             trigger={
                 <Button type="primary">
-                    <PlusOutlined/>
-                    添加用户
+                    <MinusOutlined />
+                    删除用户
                 </Button>
             }
             autoFocusFirstInput={true}
@@ -39,7 +39,6 @@ export default () => {
             }}
         >
             <ProFormGroup>
-                <ProFormText name={"id"} label={"学号"} required={true}/>
                 <ProFormText name={"name"} label={"姓名"} required={true}/>
                 <ProFormSelect name={"sex"}
                                label={"性别"}

@@ -119,7 +119,7 @@ class UserManagementPage extends React.Component<any, any> {
                     pageSize: 5,
                 }}
                 dateFormatter="string"
-                headerTitle="用户管理"
+                headerTitle="权限管理"
                 toolBarRender={() => [
                     <AddUserForm/>,
                     <DelUserForm/>,
